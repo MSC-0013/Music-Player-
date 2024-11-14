@@ -1,102 +1,196 @@
+/* Basic Reset for consistent styling across browsers */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif; /* Clean and modern font */
 }
 
+/* Body setup */
 body {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: url('pexels-pixabay-326333.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
+    justify-content: center;  /* Centering content horizontally */
+    align-items: center;      /* Centering content vertically */
+    height: 100vh;            /* Full height */
+    color: #fff;              /* White text color for visibility */
+    background-color: #2c3e50; /* Dark background for contrast */
+    background-size: cover;  /* Cover the entire screen with the background */
+    background-position: center; /* Center the background image */
+    animation: backgroundSlideshow 25s infinite ease-in-out; /* Slideshow animation */
+    transition: background-image 1s ease-in-out; /* Smooth transition between background images */
+    background-repeat: no-repeat;  /* Prevent background repetition */
+    background-attachment: fixed; /* Keep background fixed during scroll */
 }
 
+/* Keyframes for the slideshow effect */
+@keyframes backgroundSlideshow {
+    0% {
+        background-image: url('1.jpg');
+    }
+    25% {
+        background-image: url('2.jpg');
+    }
+    50% {
+        background-image: url('3.jpg');
+    }
+    75% {
+        background-image: url('4.jpg');
+    }
+    100% {
+        background-image: url('1.jpg');
+    }
+}
+
+/* Music Player Styling */
 .music-player {
-    background: linear-gradient(145deg, #333, #444);
-    padding: 25px;
-    width: 400px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    text-align: center;
+    background: linear-gradient(145deg, #1e2a38, #324a63); /* Gradient background */
+    padding: 30px; /* Space inside the player */
+    width: 420px; /* Width of the player */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6), 0 2px 8px rgba(255, 255, 255, 0.1); /* Shadow for depth */
+    text-align: center; /* Centering text */
+    color: #f39c12; /* Bright golden text */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+    opacity: 0.95; /* Slight transparency */
 }
 
+/* Hover effect for music player */
+.music-player:hover {
+    transform: scale(1.05); /* Slight scale effect */
+}
+
+/* Song Info styling */
 .song-info {
-    margin-bottom: 20px;
-    font-size: 18px;
-    color: #ffa500;
-    font-weight: bold;
+    margin-bottom: 20px; /* Space below the song info */
+    font-size: 1.4em; /* Larger font size */
+    color: #f39c12; /* Golden color for song title */
+    font-weight: bold; /* Bold font */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 1px; /* Spacing between letters */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Text shadow for emphasis */
 }
 
+/* Progress bar container */
 .progress-container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    margin: 10px 0;
+    align-items: center; /* Center vertically */
+    justify-content: space-between; /* Space out items evenly */
+    gap: 10px; /* Gap between elements */
+    margin: 15px 0; /* Margin above and below */
 }
 
-#current-time, #duration-time {
-    font-size: 14px;
-}
-
+/* Progress slider */
 .progress-slider {
     -webkit-appearance: none;
     appearance: none;
-    width: 100%;
-    height: 6px;
-    background: #ffa500;
-    border-radius: 5px;
-    cursor: pointer;
+    width: 100%; /* Full width */
+    height: 6px; /* Height of the slider */
+    background: #f39c12; /* Color of the slider */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor when hovering */
 }
 
+/* Slider thumb styling */
 .progress-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 12px;
-    height: 12px;
-    background: #ff8c00;
-    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    background: #f39c12; /* Golden thumb color */
+    border-radius: 50%; /* Circular thumb */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 }
 
+/* Controls container */
 .controls {
     display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
+    justify-content: space-evenly; /* Evenly space out buttons */
+    margin: 20px 0; /* Vertical margin */
+    width: 100%; /* Full width */
 }
 
+/* Button styles */
 .btn {
-    background: #ffa500;
+    background: #f39c12; /* Golden color */
     border: none;
-    padding: 12px;
-    border-radius: 50%;
+    padding: 15px;
+    border-radius: 50%; /* Round buttons */
     cursor: pointer;
-    font-size: 20px;
-    transition: background 0.3s ease;
-    width: 50px;
-    height: 50px;
+    font-size: 22px; /* Large font size */
+    width: 60px; /* Slightly bigger button */
+    height: 60px; /* Same as width for circular shape */
+    transition: background 0.3s ease, transform 0.2s ease; /* Smooth hover and press effects */
+    color: #fff; /* White icon color */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Shadow for depth */
 }
 
+/* Hover effect for buttons */
 .btn:hover {
-    background: #ff8c00;
+    background: #e67e22; /* Darker orange on hover */
+    transform: scale(1.1); /* Slightly larger on hover */
 }
 
+/* Active state for buttons */
+.btn:active {
+    transform: scale(1); /* Button returns to normal size */
+    box-shadow: none; /* Remove shadow when clicked */
+}
+
+/* Bottom controls for volume and settings */
 .bottom-controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Space buttons evenly */
     align-items: center;
     margin-top: 15px;
+    width: 100%; /* Full width */
 }
 
-.volume-label {
-    font-size: 14px;
-    margin-right: 5px;
-}
-
+/* Volume slider */
 #volume-slider {
-    width: 50%;
+    width: 60%; /* Width of the slider */
     cursor: pointer;
+    height: 6px; /* Height of the volume slider */
+    background: #f39c12; /* Golden color */
+    border-radius: 5px;
+}
+
+/* Volume slider thumb styling */
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background: #e67e22; /* Slightly darker thumb */
+    border-radius: 50%; /* Circular thumb */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Shadow for thumb */
+}
+
+/* Additional Styles */
+h1 {
+    font-size: 2em; /* Larger font size for headings */
+    color: #fff; /* White color for heading */
+    text-align: center; /* Center the heading */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6); /* Add a shadow for better visibility */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+footer {
+    position: absolute; /* Position the footer at the bottom */
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+/* Footer link styles */
+footer a {
+    color: #f39c12; /* Golden color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hover effect for footer links */
+footer a:hover {
+    text-decoration: underline;
 }
