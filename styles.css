@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('pexels-pixabay-326333.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+.music-player {
+    background: linear-gradient(145deg, #333, #444);
+    padding: 25px;
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.song-info {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #ffa500;
+    font-weight: bold;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+#current-time, #duration-time {
+    font-size: 14px;
+}
+
+.progress-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background: #ffa500;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.progress-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #ff8c00;
+    border-radius: 50%;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.btn {
+    background: #ffa500;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background 0.3s ease;
+    width: 50px;
+    height: 50px;
+}
+
+.btn:hover {
+    background: #ff8c00;
+}
+
+.bottom-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.volume-label {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+#volume-slider {
+    width: 50%;
+    cursor: pointer;
+}

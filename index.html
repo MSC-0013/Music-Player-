@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="music-player">
+       
+        <div class="song-info">
+            <p id="song-name">No song selected</p>
+            
+        </div>
+
+        
+        <div class="progress-container">
+            <span id="current-time">0:00</span>
+            <input type="range" id="progress-slider" min="0" value="0" class="progress-slider">
+            <span id="duration-time">0:00</span>
+        </div>
+
+        
+        <div class="controls">
+            <button id="backward-btn" class="btn">⏮️</button>
+            <button id="play-pause-btn" class="btn">▶️</button>
+            <button id="forward-btn" class="btn">⏭️</button>
+        </div>
+
+        <div class="bottom-controls">
+            <label for="volume-slider" class="volume-label">Volume</label>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+            <button id="choose-btn" class="btn choose-btn">☢</button>
+            
+        </div>
+        <div>
+            <h5>Designed by MSC</h5>
+        </div>
+
+        <audio id="audio" hidden></audio>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
